@@ -1,6 +1,7 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template file, choose Tools | Templateso
+
  * and open the template in the editor.
  */
 
@@ -45,6 +46,11 @@ int elementos;
         BAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BAgregarMouseClicked(evt);
+            }
+        });
+        BAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BAgregarActionPerformed(evt);
             }
         });
 
@@ -137,6 +143,10 @@ int elementos;
         
         
     }//GEN-LAST:event_ActualizarActionPerformed
+
+    private void BAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAgregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BAgregarActionPerformed
 public void imprimirArreglo(){
     ATContenido.setText("");
     for (int pos=0; pos<elementos; pos++){
