@@ -31,7 +31,7 @@ public class ED_MATRIZ_CALIFICACIONES {
                 + "3.- Promedio del alumno \n"
                 + "4.- Promedio general \n"
                 + "5.- Obtener calificación \n"
-                + "6.- Promedio de fila\n"
+                + "6.- Promedio de Materia\n"
                 + "7.- Salir "));
                 if (opcion<1 || opcion>7) {
                     letrero("La opcion ingresada no existe.");
@@ -58,7 +58,9 @@ public class ED_MATRIZ_CALIFICACIONES {
                     obtenerCalificacion(calificaciones); 
                     break;
                 case 6:
-                    promedioColumna(calificaciones);
+                    int numMateria = 0;
+                    numMateria=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de la materia:"));
+                    promedioColumna(calificaciones,numMateria);
                     break;
                 case 7:
                   System.exit(0);
@@ -80,9 +82,9 @@ public class ED_MATRIZ_CALIFICACIONES {
     
     public static void imprimir_calificaciones(double matrix[][]){
         for (int fila= 0;fila<matrix.length; fila++ ){
-            System.out.println("-Alumno "+(fila+1)+": ");
+            letrero("-Alumno "+(fila+1)+": ");
             for(int columna = 0;columna<matrix[0].length; columna++){
-               System.out.print(" "+matrix[fila][columna]);
+               letrero(" "+matrix[fila][columna]);
             }
             System.out.println("");
         }
@@ -155,7 +157,15 @@ public class ED_MATRIZ_CALIFICACIONES {
         letrero("La calificación seleccionada del alumno "+nAlumno+" es: "+String.valueOf(matrix[nAlumno-1][nCalificacion-1]));
     }
     
-    public static void promedioColumna(double matrix [][]){
+    public static void promedioColumna(double matrix [][], int num){
+        double promedio = 0;
+        double suma=0;
+            for(int i = 0; i<matrix.length;i++){
+                suma = suma +matrix[i][num-1];
+            }
+            promedio = suma/matrix.length;
+            letrero("El promedio de la Materia "+num+" es: "+promedio);
+        
         
     }
 }
